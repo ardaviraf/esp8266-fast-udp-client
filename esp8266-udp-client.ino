@@ -1,32 +1,24 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 
-//  IPAddress ip(10, 42, 0, 69); 
-//  IPAddress gateway(10, 42, 0, 255);
-//  IPAddress subnet(255, 255, 255, 0);
-
-
-const char* ssid     = "iotc";
-const char* password = "darman933";
+const char* ssid     = "ssid";
+const char* password = "pass";
 const char* ipd = "192.168.43.123";
 const int port = 33333;
  
 void setup() {
  
   Serial.begin(115200);
-   delay(10);
-   // We start by connecting to a WiFi network
+  delay(10);
+  // We start by connecting to a WiFi network
   Serial.println();
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
   
-//WiFi.config(ip, gateway, subnet);
+  //WiFi.config(ip, gateway, subnet);
   WiFi.begin(ssid, password);
 
-
-
-  
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -83,7 +75,6 @@ void loop() {
       delay(90); // for a 2Mbps mobile hotspot sending to Core i3 Node.js server.
       
       } 
-    
-  
+ 
 }
 
